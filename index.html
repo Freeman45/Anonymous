@@ -5,7 +5,6 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Send a Message</title>
   <style>
-    /* Background */
     body {
       margin: 0;
       font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
@@ -15,8 +14,6 @@
       align-items: center;
       height: 100vh;
     }
-
-    /* Card container */
     .container {
       background: #ffffff;
       padding: 40px 35px;
@@ -27,19 +24,15 @@
       text-align: center;
       animation: fadeIn 0.8s ease-in-out;
     }
-
-    /* Fade-in animation */
     @keyframes fadeIn {
       from { opacity: 0; transform: translateY(-20px); }
       to { opacity: 1; transform: translateY(0); }
     }
-
     h2 {
       color: #333;
       margin-bottom: 25px;
       font-size: 28px;
     }
-
     input, textarea {
       width: 100%;
       padding: 15px 18px;
@@ -50,18 +43,12 @@
       box-sizing: border-box;
       transition: border 0.3s, box-shadow 0.3s;
     }
-
     input:focus, textarea:focus {
       border-color: #2575fc;
       box-shadow: 0 0 8px rgba(37, 117, 252, 0.3);
       outline: none;
     }
-
-    textarea {
-      resize: vertical;
-      min-height: 140px;
-    }
-
+    textarea { resize: vertical; min-height: 140px; }
     button {
       width: 100%;
       padding: 15px;
@@ -74,17 +61,8 @@
       cursor: pointer;
       transition: background 0.3s, transform 0.2s;
     }
-
-    button:hover {
-      background: #6a11cb;
-      transform: translateY(-2px);
-    }
-
-    .note {
-      margin-top: 15px;
-      color: #555;
-      font-size: 14px;
-    }
+    button:hover { background: #6a11cb; transform: translateY(-2px); }
+    .note { margin-top: 15px; color: #555; font-size: 14px; }
   </style>
 </head>
 <body>
