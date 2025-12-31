@@ -1,21 +1,27 @@
 from flask import Flask, request, render_template_string
-import os
 from datetime import datetime
 
 app = Flask(__name__)
 
-# Folder and file setup
-folder = "Anon"
-file_path = os.path.join(folder, "M2m.txt")
-os.makedirs(folder, exist_ok=True)
+# File to store messages (in the same folder as app.py)
+file_path = "M2m.txt"
 
 # Simple HTML form
 HTML_FORM = """
-<form method="POST" action="/">
-  <input type="text" name="name" placeholder="Your name (optional)">
-  <textarea name="message" placeholder="Type your message..." required></textarea>
-  <button type="submit">Send</button>
-</form>
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Send a Message</title>
+</head>
+<body>
+    <h2>Send a Message</h2>
+    <form method="POST" action="/">
+        <input type="text" name="name" placeholder="Your name (optional)"><br><br>
+        <textarea name="message" placeholder="Type your message..." required></textarea><br><br>
+        <button type="submit">Send</button>
+    </form>
+</body>
+</html>
 """
 
 @app.route("/", methods=["GET", "POST"])
@@ -25,11 +31,11 @@ def index():
         message = request.form.get("message", "")
         time = datetime.now().isoformat()
 
-        # Append message to file
+        # Append message to M2m.txt
         with open(file_path, "a", encoding="utf-8") as f:
-            f.write(f"Name: {name}\nMessage: {message}\nTime: {time}\n{'-'*20}\n")
+            f.write(f"Name: {name}\nMessage: {message}\nTime: {time}\n{'-'*30}\n")
 
-        return "Message sent successfully! <a href='/'>Send another</a>"
+        return "<h3>Message sent successfully!</h3><a href='/'>Send another</a>"
 
     return render_template_string(HTML_FORM)
 
