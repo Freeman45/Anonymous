@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Send a Message</title>
+</head>
+<body>
+  <h2>Send a Message</h2>
+
+  <form action=https://script.google.com/macros/s/AKfycbxyl3rdTRh1p6u4n2V7wRT_Ng4AXXO7vuebaypExa3pSELXomyFQBGao0UeXoG8-2BX/exec" method="POST">
+    <input type="text" name="name" placeholder="Your name (optional)"><br><br>
+    <textarea name="message" placeholder="Type your message..." required></textarea><br><br>
+    <button type="submit">Send</button>
+  </form>
+</body>
+</html>
